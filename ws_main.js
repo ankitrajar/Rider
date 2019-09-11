@@ -8,10 +8,10 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const express = require('express');
 
-const app = express();
+global.app = express();
 
 app.use(bodyParser.json());
-app.use(function(err,req,res,next){
+app.use(function(error,req,res,next){
     if(error instanceof SyntaxError){
         return res.status(400).send('ERROR 400: Bad Request!!!');
     }
@@ -19,7 +19,6 @@ app.use(function(err,req,res,next){
 });
 
 app.use(express.urlencoded({extended: true}));
-
 app.use('/',home);
 app.use('/mgmt',mgmt);
 
@@ -31,5 +30,6 @@ else if(app.get('env') === 'production'){
     app.use(log_http('tiny'));
 }
 log_startup(`Starting Application : ${config.get('name')}`);
+
 const port = config.get('server_port') || 3000;
 app.listen(port,()=>log_startup(`Listening over port ${port} ...`));
