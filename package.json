@@ -17,7 +17,8 @@
     "url": "https://github.com/ankitrajar/Rider/issues"
   },
   "homepage": "https://github.com/ankitrajar/Rider#readme",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "body-parser": "^1.19.0",
     "config": "^3.2.2",
     "debug": "^4.1.1",
@@ -26,9 +27,7 @@
     "joi": "^14.3.1",
     "mongoose": "^5.7.0",
     "morgan": "^1.9.1",
-    "path": "^0.12.7"
-  },
-  "devDependencies": {
+    "path": "^0.12.7",
     "nodemon": "^1.19.2"
   }
 }
