@@ -1,0 +1,4 @@
+{
+    "name" : "DEV-WEB-SERVER",
+    "mongodbip" : "localhost"
+}
